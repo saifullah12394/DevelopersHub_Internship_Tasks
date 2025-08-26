@@ -52,3 +52,27 @@ This helps in understanding different customer profiles and designing targeted m
 
 Overall, clustering helped in understanding customer behavior patterns and provided actionable insights for marketing strategy.
 
+# Task 3: Energy Consumption Forecasting
+
+## Objective
+The objective of this task is to forecast short-term household energy consumption using historical data.  
+This is a time series forecasting problem where we compare multiple models to identify which method works best.
+
+## Approach
+1. Loaded the **Household Power Consumption dataset** from the UCI Machine Learning Repository.  
+2. Selected the `Global_active_power` column as the target variable.  
+3. Filtered the data to two years (2007–2008) for faster training and resampled it to daily averages.  
+4. Split the dataset into training and testing sets (last 90 days used for testing).  
+5. Trained three models:  
+   - **ARIMA (statsmodels)** for baseline time series forecasting.  
+   - **Prophet** for handling seasonality and trend.  
+   - **XGBoost** with lag features for machine learning based forecasting.  
+6. Evaluated the models using **MAE (Mean Absolute Error)** and **RMSE (Root Mean Squared Error)**.  
+7. Visualized actual vs forecasted values to compare model performance.
+
+## Results and Findings
+- **ARIMA** provided a reasonable baseline but struggled with complex variations.  
+- **Prophet** captured trends and seasonality better than ARIMA.  
+- **XGBoost** gave the best overall accuracy when lag features were added.  
+- Overall, XGBoost proved to be the most effective approach for forecasting short-term household energy consumption.  
+
